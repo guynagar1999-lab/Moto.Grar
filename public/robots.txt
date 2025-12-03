@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow access to CSS and JS files
+Allow: /_next/static/css/
+Allow: /_next/static/js/
+
+# Sitemap
+Sitemap: https://grar-alfa.co.il/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
