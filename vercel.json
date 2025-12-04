@@ -1,6 +1,25 @@
 {
   "version": 2,
+  "name": "motogar-alfa-website",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": {
+        "experimental": {
+          "optimizeCss": true,
+          "scrollRestoration": true
+        }
+      }
+    }
+  ],
   "regions": ["fra1"],
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
@@ -16,6 +35,10 @@
         {
           "key": "Referrer-Policy",
           "value": "origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
     },
@@ -38,10 +61,16 @@
       ]
     }
   ],
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
     }
   ]
 }

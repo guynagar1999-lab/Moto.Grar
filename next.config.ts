@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Output configuration for Vercel
+  output: 'standalone',
+
   // Performance optimizations
   compress: true,
 
@@ -19,9 +22,8 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
-  // Experimental features for better performance
+  // Experimental features for Next.js 16
   experimental: {
-    optimizeCss: true,
     scrollRestoration: true,
   },
 
