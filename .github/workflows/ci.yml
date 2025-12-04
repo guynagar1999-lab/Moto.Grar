@@ -1,0 +1,78 @@
+name: CI
+
+# Trigger the workflow on push to main branch or on pull requests targeting main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Step 2: Setup Node.js with the latest LTS version (v18)
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'  # Cache npm dependencies for faster builds
+
+    # Step 3: Install project dependencies using npm
+    - name: Install dependencies
+      run: npm ci  # Use npm ci for faster, reliable installs in CI
+
+    # Step 4: Run linting to check code quality
+    - name: Run lint
+      run: npm run lint  # Assumes 'lint' script exists in package.json
+
+    # Send lint status to Vercel for deployment checks
+    - name: Send lint status to Vercel
+      uses: vercel/repository-dispatch/actions/status@v1
+      with:
+        name: 'Vercel - Grar Alfa: Lint'
+        state: ${{ job.status == 'success' && 'success' || 'failure' }}
+        description: 'Lint check completed'
+
+    # Step 5: Run unit tests
+    - name: Run unit tests
+      run: npm test  # Assumes 'test' script exists in package.json
+
+    # Send unit tests status to Vercel
+    - name: Send test status to Vercel
+      uses: vercel/repository-dispatch/actions/status@v1
+      with:
+        name: 'Vercel - Grar Alfa: Unit Tests'
+        state: ${{ job.status == 'success' && 'success' || 'failure' }}
+        description: 'Unit tests completed'
+
+    # Step 6: Run smoke test by curling the Vercel deployment URL
+    - name: Run smoke test
+      run: |
+        # Determine the URL to test: use VERCEL_URL for PR previews, production URL for main
+        if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
+          URL=$VERCEL_URL
+        else
+          URL=https://grar-alfa.co.il  # Production URL from package.json homepage
+        fi
+        echo "Testing URL: $URL"
+        # Curl the URL and check for HTTP 200 response
+        if curl -f -s --max-time 30 $URL > /dev/null; then
+          echo "Smoke test passed: $URL responded with HTTP 200"
+        else
+          echo "Smoke test failed: $URL did not respond with HTTP 200"
+          exit 1
+        fi
+
+    # Send smoke test status to Vercel
+    - name: Send smoke test status to Vercel
+      uses: vercel/repository-dispatch/actions/status@v1
+      with:
+        name: 'Vercel - Grar Alfa: Smoke Test'
+        state: ${{ job.status == 'success' && 'success' || 'failure' }}
+        description: 'Smoke test completed'
