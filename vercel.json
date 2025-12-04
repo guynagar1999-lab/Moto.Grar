@@ -1,18 +1,5 @@
 {
-  "version": 2,
-  "name": "motogar-alfa-website",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next",
-      "config": {
-        "experimental": {
-          "optimizeCss": true,
-          "scrollRestoration": true
-        }
-      }
-    }
-  ],
+  "framework": "nextjs",
   "regions": ["fra1"],
   "functions": {
     "src/app/api/**/*.ts": {

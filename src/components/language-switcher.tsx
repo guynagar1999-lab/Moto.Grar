@@ -8,8 +8,7 @@ import { useLanguage, Language } from '@/lib/i18n'
 
 const languageOptions = [
   { code: 'he' as Language, name: 'עברית', flag: '🇮🇱' },
-  { code: 'en' as Language, name: 'English', flag: '🇺🇸' },
-  { code: 'ar' as Language, name: 'العربية', flag: '🇸🇦' }
+  { code: 'en' as Language, name: 'English', flag: '🇺🇸' }
 ]
 
 export default function LanguageSwitcher() {
@@ -26,7 +25,7 @@ export default function LanguageSwitcher() {
   useEffect(() => {
     // Update document direction and language when language changes
     document.documentElement.lang = language
-    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr'
+    document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr'
   }, [language])
 
   return (

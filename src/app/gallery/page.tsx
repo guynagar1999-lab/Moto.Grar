@@ -21,7 +21,7 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: '1',
-    src: '/MotoGrarZ.avif',
+    src: '/images/gallery/motorcycle-towing-1.jpg',
     title: 'חילוץ אופנוע Z',
     description: 'חילוץ אופנוע מתקדם בדרך הררית עם ציוד מיוחד',
     date: '15/11/2024',
@@ -30,7 +30,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '2',
-    src: '/MotoGrarZ1.avif',
+    src: '/images/gallery/motorcycle-towing-2.jpg',
     title: 'העברת אופנוע למוסך',
     description: 'שירות העברה בטוחה של אופנוע פגוע למוסך מורשה',
     date: '12/11/2024',
@@ -39,7 +39,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '3',
-    src: '/MotoGrarZ2.avif',
+    src: '/images/gallery/atv-recovery-1.jpg',
     title: 'שירות דחוף בלילה',
     description: 'חילוץ דחוף באמצע הלילה עם צוות מיומן 24/7',
     date: '10/11/2024',
@@ -48,7 +48,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '4',
-    src: '/MotoGrarZ3.avif',
+    src: '/images/gallery/atv-recovery-2.jpg',
     title: 'חילוץ ATV מדרכים',
     description: 'חילוץ רכב ATV מתקוע בבוץ עם משאית מיוחדת',
     date: '08/11/2024',
@@ -57,7 +57,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '5',
-    src: '/MotoGrarZ4.avif',
+    src: '/images/gallery/rzr-towing-1.jpg',
     title: 'העברת RZR למוסך',
     description: 'שירות מקצועי להעברת RZR עם ציוד מתמחה',
     date: '05/11/2024',
@@ -66,7 +66,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '6',
-    src: '/MotoGrarZ5.avif',
+    src: '/images/gallery/rzr-towing-2.jpg',
     title: 'חילוץ בשטח קשה',
     description: 'חילוץ מורכב משטח קשה עם ציוד כבד',
     date: '03/11/2024',
@@ -75,7 +75,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '7',
-    src: '/MotoGrarZ6.avif',
+    src: '/images/gallery/night-service-1.jpg',
     title: 'שירות לילה מאוחר',
     description: 'זמינות מלאה גם בשעות הלילה המאוחרות',
     date: '01/11/2024',
@@ -84,7 +84,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '8',
-    src: '/MotoGrarZ7.avif',
+    src: '/images/gallery/night-service-2.jpg',
     title: 'חילוץ אופנוע ספורט',
     description: 'חילוץ מהיר ומקצועי של אופנוע ספורט',
     date: '28/10/2024',
@@ -93,7 +93,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '9',
-    src: '/MotoGrarZ8.avif',
+    src: '/images/gallery/equipment-1.jpg',
     title: 'העברת אופנוע ישן',
     description: 'טיפול זהיר באופנועים קלאסיים וישנים',
     date: '25/10/2024',
@@ -102,7 +102,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '10',
-    src: '/MotoGrarZ9.avif',
+    src: '/images/gallery/equipment-2.jpg',
     title: 'חילוץ בחורף',
     description: 'שירות מלא גם בתנאי מזג אוויר קשים',
     date: '22/10/2024',
@@ -111,7 +111,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: '11',
-    src: '/MotoGrarRZR.avif',
+    src: '/images/gallery/rescue-1.jpg',
     title: 'חילוץ RZR מקצועי',
     description: 'מומחיות מיוחדת בחילוץ רכבי RZR/UTV',
     date: '20/10/2024',
@@ -121,6 +121,11 @@ const galleryImages: GalleryImage[] = [
 ]
 
 const categories = ['כל התמונות', 'חילוץ דרכים', 'העברת אופנוע', 'שירות דחוף']
+
+import type { Metadata } from 'next'
+import { generateSEO, pageSEO } from '@/lib/seo'
+
+export const metadata: Metadata = generateSEO(pageSEO.gallery)
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)

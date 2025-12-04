@@ -16,13 +16,8 @@
 # חובה - OpenAI API
 OPENAI_API_KEY=sk-your-openai-key
 
-# חובה - Strapi CMS (לניהול תוכן)
-STRAPI_URL=https://your-strapi-instance.com
-NEXT_PUBLIC_STRAPI_URL=https://your-strapi-instance.com
-
-# חובה - Supabase (מסד נתונים ואימות)
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+# הערה: הפרויקט משתמש כעת בנתונים סטטיים ב-JSON במקום CMS חיצוני
+# אין צורך ב-Strapi http://localhost:3002  או Supabase
 
 # חובה - URL האתר
 NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
@@ -33,7 +28,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 #### משתני סביבה חובה:
 - `OPENAI_API_KEY` - מפתח OpenAI API
 - `STRAPI_URL` - כתובת Strapi CMS
-- `NEXT_PUBLIC_STRAPI_URL` - כתובת Strapi CMS (לקוח)
+- ` ` - כתובת Strapi CMS (לקוח)
 - `NEXT_PUBLIC_SUPABASE_URL` - כתובת Supabase
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` - מפתח Supabase
 

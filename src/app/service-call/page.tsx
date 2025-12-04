@@ -36,6 +36,15 @@ interface FormData {
   description: string
 }
 
+import type { Metadata } from 'next'
+import { generateSEO } from '@/lib/seo'
+
+export const metadata: Metadata = generateSEO({
+  title: 'קריאת שירות דחופה - Grar Alfa',
+  description: 'צור קשר מיידי לשירותי גרירה וחילוץ. זמינים 24/7 בכל הארץ. טלפון: 052-482-3435',
+  keywords: ['קריאת שירות', 'גרירה דחופה', 'חילוץ', 'שירות 24/7']
+})
+
 export default function ServiceCallPage() {
   const [images, setImages] = useState<File[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)

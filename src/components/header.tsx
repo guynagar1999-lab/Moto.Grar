@@ -8,26 +8,10 @@ import { Menu, X, Phone, Truck, MessageCircle, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { generateWhatsAppLink, formatPhone } from '@/lib/utils'
 import LanguageSwitcher from '@/components/language-switcher'
-
-const navigation = [
-  { name: 'בית', href: '/' },
-  {
-    name: 'שירותים',
-    href: '#',
-    children: [
-      { name: 'גרירת אופנועים', href: '/services/motorcycle' },
-      { name: 'גרירת ATV', href: '/services/atv' },
-      { name: 'גרירת RZR/UTV', href: '/services/rzr' },
-    ]
-  },
-  { name: 'אודותינו', href: '/about' },
-  { name: 'ביקורות', href: '/testimonials' },
-  { name: 'קריאת שירות', href: '/service-call' },
-  { name: 'צור קשר', href: '/contact' },
-  { name: 'Pro Garage', href: '/pro-garage' },
-]
+import { useLanguage } from '@/lib/i18n'
 
 export default function Header() {
+  const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -36,11 +20,32 @@ export default function Header() {
   const businessPhone = '0524823435'
   const ownerName = 'גיא נגר'
 
+  const navigation = [
+    { name: t('home'), href: '/' },
+    {
+      name: t('services'),
+      href: '#',
+      children: [
+        { name: t('motorcycle-service'), href: '/services/motorcycle' },
+        { name: t('atv-service'), href: '/services/atv' },
+        { name: t('rzr-service'), href: '/services/rzr' },
+      ]
+    },
+    { name: t('about'), href: '/about' },
+    { name: t('blog'), href: '/blog' },
+    { name: t('testimonials'), href: '/testimonials' },
+    { name: t('service-call'), href: '/service-call' },
+    { name: t('contact'), href: '/contact' },
+    { name: t('pro-garage'), href: '/pro-garage' },
+    { name: t('gallery'), href: '/gallery' },
+  ]
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // Set initial state
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -145,10 +150,10 @@ export default function Header() {
             <Button
               size="sm"
               className="neon-glow"
-              onClick={() => window.open(generateWhatsAppLink(businessPhone, 'שלום, אני מעוניין בשירות גרירה'), '_blank')}
+              onClick={() => window.open(generateWhatsAppLink(businessPhone, t('contact-us')), '_blank')}
             >
               <MessageCircle className="w-4 h-4 ml-2" />
-              WhatsApp
+              {t('whatsapp')}
             </Button>
           </div>
 
@@ -205,8 +210,11 @@ export default function Header() {
                   </div>
                 ))}
 
-                {/* Mobile Contact Buttons */}
-                <div className="px-4 pt-4 space-y-2 border-t border-gray-700">
+                {/* Mobile Language Switcher & Contact Buttons */}
+                <div className="px-4 pt-4 space-y-3 border-t border-gray-700">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
                   <Button
                     variant="outline"
                     size="sm"
@@ -223,12 +231,12 @@ export default function Header() {
                     size="sm"
                     className="w-full neon-glow"
                     onClick={() => {
-                      window.open(generateWhatsAppLink(businessPhone, 'שלום, אני מעוניין בשירות גרירה'), '_blank')
+                      window.open(generateWhatsAppLink(businessPhone, t('contact-us')), '_blank')
                       setIsOpen(false)
                     }}
                   >
                     <MessageCircle className="w-4 h-4 ml-2" />
-                    WhatsApp
+                    {t('whatsapp')}
                   </Button>
                 </div>
               </div>

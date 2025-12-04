@@ -1,48 +1,50 @@
-# 🚀 MotoGrar - אתר מתקדם לגרירת אופנועים, ATV ו-RZR/UTV
+# 🚀 MotoGrar - Professional Motorcycle, ATV & RZR Towing Services
 
-## 🏍️ תיאור הפרויקט
+## 🏍️ Project Description
 
-אתר Jamstack מתקדם וחדשני עבור **MotoGrar** - עסק המתמחה בגרירה וחילוץ אופנועים, ATV ו-RZR/UTV בכל רחבי הארץ. האתר כולל עיצוב דינמי ואגרסיבי, תכונות מתקדמות, ומערכת ניהול תוכן מלאה.
+A cutting-edge Next.js website for **MotoGrar** - Israel's leading motorcycle, ATV, and RZR/UTV towing and recovery service. Built with modern technologies, featuring dynamic design, AI-powered chatbot, and fully optimized for business promotion and SEO.
 
-**בעלים:** גיא נגר | **טלפון:** 052-482-3435
+**Owner:** Guy Nagar | **Phone:** 052-482-3435 | **Domain:** [grar-alfa.co.il](https://grar-alfa.co.il)
 
-## ✨ תכונות עיקריות
+**Created by:** [Angel0S-Platform](https://angel0s-platform.vercel.app) - Business & Personal Promotion Services
 
-### 🎨 עיצוב וחוויית משתמש
-- **עיצוב דינמי ואגרסיבי** עם צבעים כהים ואקצנטים ניאון (כתום/צהוב)
-- **אנימציות מתקדמות** - Framer Motion עם אפקטים מיוחדים
-- **תמיכה מלאה בעברית** (RTL) ותצוגה מותאמת למובייל
-- **PWA מוכן** להתקנה כאפליקציה ניידת
+## ✨ Key Features
 
-### 🤖 תכונות מתקדמות
-- **Chatbot AI** עם RAG להשבות שאלות חכמות
-- **משחק דפדפן** מותאם לתרבות האופנועים
-- **אזור Pro Garage** עם גייטד קונטנט למכונאים
-- **מערכת ניהול תוכן** עם Strapi CMS
+### 🎨 Design & User Experience
+- **Dynamic & Aggressive Design** with dark colors and neon accents (orange/yellow)
+- **Advanced Animations** - Framer Motion with special effects
+- **Full Hebrew Support** (RTL) and mobile-optimized display
+- **PWA Ready** for installation as a mobile app
 
-### 📊 אופטימיזציה
-- **SEO מלא** עם מטא דאטה, Sitemap ו-Robots.txt
-- **ביצועים גבוהים** עם Next.js 16 ו-Turbopack
-- **אבטחה מתקדמת** ותאימות ל-WCAG 2.1 AA
+### 🤖 Advanced Features
+- **AI Chatbot** with RAG for intelligent question answering
+- **Browser Game** adapted to motorcycle culture
+- **Pro Garage Area** with gated content for professional mechanics
+- **Business Promotion Blog** with pinned promotional content
 
-## 🛠️ טכנולוגיות
+### 📊 Optimization
+- **Complete SEO** with meta tags, sitemap, and robots.txt
+- **High Performance** with Next.js 16 and Turbopack
+- **Advanced Security** and WCAG 2.1 AA compliance
+
+## 🛠️ Technologies
 
 ### Frontend
-- **Next.js 16** - React Framework עם App Router
-- **TypeScript** - בטיחות סוגים מלאה
-- **Tailwind CSS** - עיצוב utility-first
-- **Framer Motion** - אנימציות מתקדמות
-- **Radix UI** - קומפוננטים נגישים
+- **Next.js 16** - React Framework with App Router
+- **TypeScript** - Full type safety
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Advanced animations
+- **Radix UI** - Accessible components
 
-### Backend & CMS
-- **Strapi** - Headless CMS (free, open-source)
-- **OpenAI API** - Chatbot עם RAG
-- **Vercel** - אירוח והפצה
+### AI & Features
+- **OpenAI API** - AI Chatbot with RAG
+- **Static Content** - No complex backend dependencies
+- **Vercel** - Hosting and deployment
 
-### משחק ותכנים
-- **Vanilla JavaScript** - משחק Traffic Weaving
-- **Canvas API** - גרפיקה 2D
-- **Web Audio API** - אפקטים קוליים
+### Games & Content
+- **Vanilla JavaScript** - Traffic Weaving game
+- **Canvas API** - 2D graphics
+- **Web Audio API** - Sound effects
 
 ## 📁 מבנה הפרויקט
 
@@ -75,40 +77,50 @@ motogar/
 └── package.json              # תלות
 ```
 
-## 🚀 התקנה והרצה
+## 🚀 Installation & Local Development
 
-### דרישות מקדימות
+### Prerequisites
 - Node.js 18+
-- npm או yarn
+- npm or yarn
 - Git
 
-### התקנה מהירה
+### Quick Setup
 ```bash
-# שיבוט הפרויקט
+# Clone the project
 git clone <repository-url>
 cd motogar
 
-# התקנת תלות
+# Install dependencies
 npm install
 
-# הרצת סביבת פיתוח
+# Copy environment variables
+cp .env.example .env.local
+
+# Edit .env.local with your values
+# OPENAI_API_KEY=your-openai-key-here
+# NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Run development server
 npm run dev
 ```
 
-### פקודות זמינות
+### Available Commands
 ```bash
-npm run dev          # הרצת סביבת פיתוח (http://localhost:3000)
-npm run build        # בנייה לייצור
-npm run start        # הרצת שרת ייצור
-npm run lint         # בדיקת קוד (ESLint)
+npm run dev          # Development server (http://localhost:3001)
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # Code linting (ESLint)
+npm run type-check   # TypeScript checking
 ```
 
-## 🌐 כתובות האתר
+## 🌐 Site URLs
 
-- **דף הבית:** http://localhost:3000
-- **Chatbot AI:** http://localhost:3000/chatbot
-- **משחק:** http://localhost:3000/game
-- **Pro Garage:** http://localhost:3000/pro-garage (גייטד)
+- **Home:** http://localhost:3001
+- **AI Chatbot:** http://localhost:3001/chatbot
+- **Game:** http://localhost:3001/game
+- **Pro Garage:** http://localhost:3001/pro-garage
+- **Blog:** http://localhost:3001/blog
+- **Contact:** http://localhost:3001/contact
 
 ## 🎮 תכונות מיוחדות
 
@@ -188,32 +200,92 @@ const knowledgeBase = {
 - **Screen Reader:** ✅
 - **Keyboard Navigation:** ✅
 
-## 🚀 פריסה
+## 🚀 Deployment to Vercel & Domain Setup
 
-### Vercel (מומלץ)
+### Step 1: Push to GitHub
 ```bash
-# התקנת Vercel CLI
+# Add all changes
+git add .
+
+# Commit changes
+git commit -m "Complete MotoGrar website overhaul - production ready"
+
+# Push to main branch
+git push origin main
+```
+
+### Step 2: Deploy to Vercel
+
+#### Option A: Vercel Dashboard (Recommended)
+1. Go to [vercel.com](https://vercel.com)
+2. Click "New Project"
+3. Import your GitHub repository
+4. Configure settings:
+   - **Framework Preset:** Next.js
+   - **Root Directory:** `./` (leave empty)
+   - **Build Command:** `npm run build`
+   - **Output Directory:** (leave empty)
+   - **Install Command:** `npm install`
+
+#### Option B: Vercel CLI
+```bash
+# Install Vercel CLI
 npm i -g vercel
 
-# פריסה
+# Login to Vercel
+vercel login
+
+# Deploy
 vercel --prod
 ```
 
-### Netlify
+### Step 3: Set Environment Variables in Vercel
+In your Vercel project dashboard:
+1. Go to Settings → Environment Variables
+2. Add these variables:
+   ```
+   OPENAI_API_KEY=your-openai-api-key-here
+   NEXT_PUBLIC_SITE_URL=https://grar-alfa.co.il
+   ```
+
+### Step 4: Add Custom Domain (grar-alfa.co.il)
+1. In Vercel dashboard, go to Settings → Domains
+2. Add `grar-alfa.co.il`
+3. Vercel will provide DNS records to configure
+4. Update your domain registrar DNS settings:
+   ```
+   Type: CNAME
+   Name: @
+   Value: cname.vercel-dns.com
+   ```
+5. Wait for SSL certificate (automatic)
+
+### Step 5: Verify Deployment
+- ✅ Site loads at https://grar-alfa.co.il
+- ✅ All pages work correctly
+- ✅ Contact forms functional
+- ✅ SEO meta tags present
+- ✅ Mobile responsive
+
+### Alternative Deployment Options
+
+#### Netlify
 ```bash
-# התקנת Netlify CLI
+# Install Netlify CLI
 npm i -g netlify-cli
 
-# פריסה
+# Deploy
 netlify deploy --prod --dir=.next
 ```
 
-### VPS/Docker
+#### Docker (for VPS)
 ```dockerfile
 FROM node:18-alpine
-COPY . /app
 WORKDIR /app
-RUN npm ci && npm run build
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
 ```

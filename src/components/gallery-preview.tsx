@@ -16,67 +16,67 @@ interface CarouselImage {
 const carouselImages: CarouselImage[] = [
   {
     id: '1',
-    src: '/MotoGrarZ.avif',
+    src: '/images/gallery/motorcycle-towing-1.jpg',
     title: 'חילוץ אופנוע Z',
     description: 'חילוץ אופנוע מתקדם בדרך הררית'
   },
   {
     id: '2',
-    src: '/MotoGrarZ1.avif',
+    src: '/images/gallery/motorcycle-towing-2.jpg',
     title: 'העברת אופנוע למוסך',
     description: 'שירות העברה בטוחה של אופנוע פגוע'
   },
   {
     id: '3',
-    src: '/MotoGrarZ2.avif',
+    src: '/images/gallery/atv-recovery-1.jpg',
     title: 'שירות דחוף בלילה',
     description: 'חילוץ דחוף באמצע הלילה עם צוות מיומן'
   },
   {
     id: '4',
-    src: '/MotoGrarZ3.avif',
+    src: '/images/gallery/atv-recovery-2.jpg',
     title: 'חילוץ ATV מדרכים',
     description: 'חילוץ רכב ATV מתקוע בבוץ'
   },
   {
     id: '5',
-    src: '/MotoGrarZ4.avif',
+    src: '/images/gallery/rzr-towing-1.jpg',
     title: 'העברת RZR למוסך',
     description: 'שירות מקצועי להעברת RZR עם ציוד מתמחה'
   },
   {
     id: '6',
-    src: '/MotoGrarZ5.avif',
+    src: '/images/gallery/rzr-towing-2.jpg',
     title: 'חילוץ בשטח קשה',
     description: 'חילוץ מורכב משטח קשה עם ציוד כבד'
   },
   {
     id: '7',
-    src: '/MotoGrarZ6.avif',
+    src: '/images/gallery/night-service-1.jpg',
     title: 'שירות לילה מאוחר',
     description: 'זמינות מלאה גם בשעות הלילה המאוחרות'
   },
   {
     id: '8',
-    src: '/MotoGrarZ7.avif',
+    src: '/images/gallery/night-service-2.jpg',
     title: 'חילוץ אופנוע ספורט',
     description: 'חילוץ מהיר ומקצועי של אופנוע ספורט'
   },
   {
     id: '9',
-    src: '/MotoGrarZ8.avif',
+    src: '/images/gallery/equipment-1.jpg',
     title: 'העברת אופנוע ישן',
     description: 'טיפול זהיר באופנועים קלאסיים וישנים'
   },
   {
     id: '10',
-    src: '/MotoGrarZ9.avif',
+    src: '/images/gallery/equipment-2.jpg',
     title: 'חילוץ בחורף',
     description: 'שירות מלא גם בתנאי מזג אוויר קשים'
   },
   {
     id: '11',
-    src: '/MotoGrarRZR.avif',
+    src: '/images/gallery/rzr-towing-1.jpg',
     title: 'חילוץ RZR מקצועי',
     description: 'מומחיות מיוחדת בחילוץ רכבי RZR/UTV'
   }

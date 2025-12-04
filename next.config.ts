@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Output configuration for Vercel
-  output: 'standalone',
 
   // Performance optimizations
   compress: true,
 
-  // Image optimization
+  // Image optimization - temporarily disable for debugging
   images: {
     remotePatterns: [
       {
@@ -20,6 +18,7 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, // TEMPORARY: Disable optimization to fix 400 errors
   },
 
   // Experimental features for Next.js 16
