@@ -1,8 +1,1 @@
-{
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "runtime": "nodejs24.x",
-      "maxDuration": 10
-    }
-  }
-}
+{}
