@@ -1,9 +1,5 @@
 'use client'
 
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
-
-export const metadata: Metadata = generateSEO(pageSEO.services.motorcycle)
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, Shield, Wrench, Phone, CheckCircle } from 'lucide-react'

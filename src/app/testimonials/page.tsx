@@ -5,11 +5,6 @@ import { Star, Quote } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
 
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
-
-export const metadata: Metadata = generateSEO(pageSEO.testimonials)
-
 const testimonials = [
   {
     id: 1,

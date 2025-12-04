@@ -1,11 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
 import { motion } from 'framer-motion'
-
-export const metadata: Metadata = generateSEO(pageSEO.contact)
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'

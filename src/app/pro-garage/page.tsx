@@ -721,11 +721,6 @@ const difficultyLabels = {
   advanced: 'מתקדם'
 }
 
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
-
-export const metadata: Metadata = generateSEO(pageSEO['pro-garage'])
-
 export default function ProGaragePage() {
   const [expandedGuide, setExpandedGuide] = useState<number | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string>('all')

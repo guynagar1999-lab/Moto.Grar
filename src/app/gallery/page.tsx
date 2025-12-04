@@ -122,11 +122,6 @@ const galleryImages: GalleryImage[] = [
 
 const categories = ['כל התמונות', 'חילוץ דרכים', 'העברת אופנוע', 'שירות דחוף']
 
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
-
-export const metadata: Metadata = generateSEO(pageSEO.gallery)
-
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [selectedCategory, setSelectedCategory] = useState('כל התמונות')

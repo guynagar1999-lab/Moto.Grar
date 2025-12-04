@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-
   // Performance optimizations
   compress: true,
 
-  // Image optimization - temporarily disable for debugging
+  // Disable problematic features for Vercel
+  poweredByHeader: false,
+
+  // Image optimization
   images: {
     remotePatterns: [
       {
@@ -18,13 +20,10 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: true, // TEMPORARY: Disable optimization to fix 400 errors
   },
 
-  // Experimental features for Next.js 16
-  experimental: {
-    scrollRestoration: true,
-  },
+  // Disable experimental features that may cause deployment issues
+  experimental: {},
 
   // Headers for security and performance
   async headers() {

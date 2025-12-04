@@ -1,10 +1,5 @@
 'use client'
 
-import type { Metadata } from 'next'
-import { generateSEO, pageSEO } from '@/lib/seo'
-
-export const metadata: Metadata = generateSEO(pageSEO.about)
-
 import { motion } from 'framer-motion'
 import { Truck, Shield, Clock, Award, Users, MapPin, Phone, CheckCircle, Star, Wrench, Heart, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'

@@ -1,6 +1,5 @@
 'use client'
 
-import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { LanguageProvider, useLanguage } from "@/lib/i18n";
 import { generateLocalBusinessStructuredData } from "@/lib/seo";
@@ -27,81 +26,6 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Grar Alfa - גרירת אופנועים, ATV ו-RZR/UTV מקצועית",
-    template: "%s | Grar Alfa"
-  },
-  description: "שירותי גרירה וחילוץ מקצועיים לאופנועים, ATV ו-RZR/UTV בכל הארץ. זמינים 24/7 עם ציוד מתקדם וצוות מומחים. בעלים: גיא נגר - טלפון: 052-482-3435.",
-  keywords: [
-    "גרירת אופנועים",
-    "חילוץ אופנועים",
-    "ATV",
-    "RZR",
-    "UTV",
-    "גרירה מקצועית",
-    "חילוץ דרכים",
-    "Grar Alfa",
-    "גיא נגר",
-    "גרירה 24/7",
-    "שירותי דרך",
-    "עזרה בדרך",
-    "טרקטורון",
-    "רזאר",
-    "גרר אלפא"
-  ],
-  authors: [{ name: "Grar Alfa - גיא נגר" }],
-  creator: "Grar Alfa",
-  publisher: "Grar Alfa",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: true,
-  },
-  metadataBase: new URL('https://grar-alfa.co.il'),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'he_IL',
-    url: 'https://grar-alfa.co.il',
-    title: 'Grar Alfa - גרירת אופנועים, ATV ו-RZR/UTV מקצועית',
-    description: 'שירותי גרירה וחילוץ מקצועיים לאופנועים, ATV ו-RZR/UTV בכל הארץ. זמינים 24/7 עם ציוד מתקדם וצוות מומחים.',
-    siteName: 'Grar Alfa',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Grar Alfa - גרירת אופנועים מקצועית',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Grar Alfa - גרירת אופנועים, ATV ו-RZR/UTV מקצועית',
-    description: 'שירותי גרירה וחילוץ מקצועיים לאופנועים, ATV ו-RZR/UTV בכל הארץ.',
-    images: ['/images/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
-  other: {
-    'google-site-verification': 'your-google-verification-code',
-  },
-};
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
   return (
