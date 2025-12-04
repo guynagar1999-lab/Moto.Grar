@@ -5,7 +5,6 @@
   "outputDirectory": ".next",
   "installCommand": "npm ci",
   "devCommand": "npm run dev",
-  "frameworkVersion": "14.2.33",
   "functions": {
     "src/app/api/**/*.ts": {
       "maxDuration": 30
