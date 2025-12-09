@@ -1,0 +1,63 @@
+# Robots.txt for Grar Alfa - MotoGar Website
+# https://grar-alfa.co.il/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow all important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /services/
+Allow: /gallery
+Allow: /testimonials
+Allow: /blog
+Allow: /pro-garage
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /api/private
+Disallow: /dashboard
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow crawling of static assets
+Allow: /images/
+Allow: /icons/
+Allow: /favicon.ico
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://grar-alfa.co.il/sitemap.xml
+
+# Additional sitemaps for different languages (when implemented)
+# Sitemap: https://grar-alfa.co.il/sitemap-he.xml
+# Sitemap: https://grar-alfa.co.il/sitemap-en.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
