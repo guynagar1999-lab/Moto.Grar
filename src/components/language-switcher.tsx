@@ -60,7 +60,11 @@ export default function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 border border-white/10 hover:border-orange-500/50 transition-all text-white backdrop-blur-md"
+        className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gray-800/50 hover:bg-gray-700/50 border border-white/10 hover:border-orange-500/50 transition-all text-white backdrop-blur-md min-w-[100px] justify-center"
+        style={{
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation'
+        }}
         aria-label="Select language"
       >
         <Languages className="w-4 h-4 text-orange-400" />
@@ -75,24 +79,34 @@ export default function LanguageSwitcher() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full right-0 mt-2 w-48 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl z-[100] overflow-hidden"
+            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-gray-900/95 backdrop-blur-xl border border-gray-700 rounded-xl shadow-2xl overflow-hidden"
+            style={{
+              zIndex: 9999,
+              maxWidth: 'calc(100vw - 2rem)',
+            }}
           >
-            {languageOptions.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageChange(lang.code)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-800 transition-colors ${language === lang.code ? 'bg-orange-500/20 border-r-2 border-orange-500' : ''
-                  }`}
-              >
-                <span className="text-xl">{lang.flag}</span>
-                <span className={`flex-1 font-medium ${language === lang.code ? 'text-orange-400' : 'text-gray-200'}`}>
-                  {lang.name}
-                </span>
-                {language === lang.code && (
-                  <Check className="w-4 h-4 text-orange-400" />
-                )}
-              </button>
-            ))}
+            <div className="max-h-[60vh] overflow-y-auto">
+              {languageOptions.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-gray-800 transition-colors ${language === lang.code ? 'bg-orange-500/20 border-r-2 border-orange-500' : ''
+                    }`}
+                  style={{
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
+                >
+                  <span className="text-xl">{lang.flag}</span>
+                  <span className={`flex-1 font-medium ${language === lang.code ? 'text-orange-400' : 'text-gray-200'}`}>
+                    {lang.name}
+                  </span>
+                  {language === lang.code && (
+                    <Check className="w-4 h-4 text-orange-400" />
+                  )}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

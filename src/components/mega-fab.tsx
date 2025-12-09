@@ -26,7 +26,7 @@ export function MegaFAB() {
         {
             id: 'chatbot',
             icon: Bot,
-            label: 'צ׳אט בוט AI',
+            label: 'צאט בוט AI',
             color: 'from-purple-500 to-indigo-600',
             shadow: 'shadow-purple-500/40',
             action: () => {
@@ -72,8 +72,17 @@ export function MegaFAB() {
 
     return (
         <>
-            {/* MegaFAB - Positioned Bottom Left */}
-            <div className="fixed z-[9999] transition-all duration-300 bottom-4 left-4 md:bottom-8 md:left-8">
+            {/* MegaFAB - Positioned Bottom Left with proper z-index */}
+            <div
+                className="fixed transition-all duration-300 bottom-4 left-4 md:bottom-8 md:left-8"
+                style={{
+                    zIndex: 9998,
+                    isolation: 'isolate',
+                    WebkitTransform: 'translateZ(0)',
+                    transform: 'translateZ(0)',
+                    willChange: 'transform'
+                }}
+            >
                 <AnimatePresence>
                     {isOpen && (
                         <>
@@ -82,12 +91,13 @@ export function MegaFAB() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden -z-10"
+                                className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden"
+                                style={{ zIndex: -1 }}
                                 onClick={() => setIsOpen(false)}
                             />
 
                             {/* Menu Items */}
-                            <div className="absolute bottom-20 left-0 flex flex-col-reverse gap-4 items-start w-max">
+                            <div className="absolute bottom-20 left-0 flex flex-col-reverse gap-4 items-start w-max max-w-[calc(100vw-2rem)]">
                                 {fabItems.map((item, index) => (
                                     <motion.button
                                         key={item.id}
@@ -101,20 +111,24 @@ export function MegaFAB() {
                                             damping: 25
                                         }}
                                         onClick={item.action}
-                                        className="group flex items-center gap-4 pl-1"
+                                        className="group flex items-center gap-3 pl-1"
+                                        style={{
+                                            WebkitTapHighlightColor: 'transparent',
+                                            touchAction: 'manipulation'
+                                        }}
                                     >
                                         {/* Icon Container */}
                                         <div
-                                            className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg ${item.shadow} group-hover:scale-110 transition-transform duration-300 border border-white/10 relative z-10`}
+                                            className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg ${item.shadow} group-hover:scale-110 group-active:scale-95 transition-transform duration-300 border border-white/10 relative z-10`}
                                         >
-                                            <item.icon className="w-6 h-6 text-white" />
+                                            <item.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                                         </div>
 
                                         {/* Label (To the right of icon) */}
                                         <motion.span
                                             initial={{ opacity: 0, x: -10 }}
                                             animate={{ opacity: 1, x: 0 }}
-                                            className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md text-gray-900 dark:text-white text-sm font-bold px-4 py-2 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap"
+                                            className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md text-gray-900 dark:text-white text-sm md:text-base font-bold px-4 py-2.5 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 whitespace-nowrap"
                                         >
                                             {item.label}
                                         </motion.span>
@@ -130,10 +144,18 @@ export function MegaFAB() {
                     onClick={() => setIsOpen(!isOpen)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 z-50 overflow-hidden ${isOpen
+                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 overflow-hidden ${isOpen
                         ? 'bg-gray-900 rotate-0 ring-4 ring-orange-500/50'
                         : 'bg-gradient-to-tr from-orange-600 via-red-600 to-red-500 hover:shadow-orange-500/60 ring-2 ring-white/20'
                         }`}
+                    style={{
+                        zIndex: 10,
+                        WebkitTapHighlightColor: 'transparent',
+                        touchAction: 'manipulation',
+                        WebkitTransform: 'translateZ(0)',
+                        transform: 'translateZ(0)'
+                    }}
+                    aria-label={isOpen ? 'סגור תפריט מהיר' : 'פתח תפריט מהיר'}
                 >
                     {/* Glass Shine Effect */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-50 pointer-events-none" />
@@ -149,7 +171,7 @@ export function MegaFAB() {
                     {/* Icon */}
                     <div className="relative z-10">
                         {isOpen ? (
-                            <Plus className="w-8 h-8 text-white rotate-45 transition-transform duration-300" />
+                            <Plus className="w-8 h-8 md:w-9 md:h-9 text-white rotate-45 transition-transform duration-300" />
                         ) : (
                             <Headset className="w-8 h-8 md:w-9 md:h-9 text-white fill-white/10" />
                         )}

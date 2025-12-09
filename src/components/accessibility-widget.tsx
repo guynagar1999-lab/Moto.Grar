@@ -189,7 +189,16 @@ export function AccessibilityWidget() {
             `}</style>
 
             {/* Fixed Sidebar Tab - Attached to left edge */}
-            <div className="fixed left-0 top-1/2 -translate-y-1/2 z-[9999]">
+            <div
+                className="fixed left-0 top-1/2 -translate-y-1/2"
+                style={{
+                    zIndex: 9997,
+                    isolation: 'isolate',
+                    WebkitTransform: 'translateY(-50%) translateZ(0)',
+                    transform: 'translateY(-50%) translateZ(0)',
+                    willChange: 'transform'
+                }}
+            >
                 {/* Tab Button - Always visible, attached to edge */}
                 <motion.button
                     onClick={() => setIsOpen(!isOpen)}
@@ -207,6 +216,8 @@ export function AccessibilityWidget() {
                         boxShadow: isOpen
                             ? '4px 0 20px rgba(59, 130, 246, 0.4)'
                             : '4px 0 15px rgba(59, 130, 246, 0.3)',
+                        WebkitTapHighlightColor: 'transparent',
+                        touchAction: 'manipulation'
                     }}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
